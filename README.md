@@ -71,3 +71,4 @@ To ensure FireCapture correctly recognizes and loads the plugin at startup, foll
   - **Linux / macOS:** `/home/<YourUsername>/` (or user root directory)
 
 *Clear skies and perfect focus!*
+![Interfaccia del Plugin](./screenshot%20app.jpg)

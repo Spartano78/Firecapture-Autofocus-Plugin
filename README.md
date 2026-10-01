@@ -3,6 +3,7 @@
 Professional multilanguage autofocus plugin for FireCapture (tested on Firecapture V. 2.7.15), developed by Stefano Romani, designed specifically for high-resolution planetary, lunar, and solar imaging with motorized focusers (e.g., Celestron via ASCOM/CPWI).
 
 ---
+[![GitHub All Releases](https://img.shields.io/github/downloads/Spartano78/Firecapture-Autofocus-Plugin/total?style=flat-square&color=blue)](https://github.com/Spartano78/Firecapture-Autofocus-Plugin/releases/latest)
 
 ## **1. Plugin Installation**
 

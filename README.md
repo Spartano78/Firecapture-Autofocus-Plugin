@@ -35,7 +35,7 @@ Professional autofocus plugin for **FireCapture**, developed by **Stefano Romani
 
 ## 🌐 Multilingual User Guide
 
-For detailed instructions, troubleshooting notes, and tips in all 12 supported languages, check the [Complete Multilingual User Guide on Google Drive](https://docs.google.com/document/d/1sHfvnEA4PIymnxOIkekx7LR1EhRNmYOZorQXHjgdJjA/edit?usp=sharing).
+For detailed instructions, troubleshooting notes, and tips in all 12 supported languages, check the Multilingual User Guode in download section.
 
 ---
 

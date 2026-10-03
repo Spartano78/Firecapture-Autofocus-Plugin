@@ -8,8 +8,8 @@ Professional autofocus plugin for **FireCapture**, developed by **Stefano Romani
 
 ## ✨ Key Features (V2.9)
 
-* **Dynamic & Symmetric Autofocus Routine & Backlash Management:** Automatic calculation of the scan radius based on the user's step size, featuring precise mechanical backlash recovery (reversing by radius + safety margin, then advancing by margin) for a perfectly symmetrical V-Curve.
-* **Real-time Scan Progress Counter:** Live status display showing `Step X/20` during the scanning process, fully localized across all supported languages.
+* **Dual Dropdown Step Configuration & Backlash Management:** Intuitive dropdown menus for **Step Size** (5, 10, 15, 20) and **Steps Count** (10, 15, 20) to control the scanning range. Paired with precise mechanical backlash recovery (reversing by scan radius + a reduced safety margin of 50 steps, then advancing by margin) for a perfectly symmetrical V-Curve while preventing tracking loss.
+* **Real-time Scan Progress Counter:** Live status display showing `Step X/20` (matching the selected total steps) during the scanning process, fully localized across all supported languages.
 * **GitHub Update Checker:** Automated online version checking directly from the GUI with secure TLS protocol handling to notify users of new releases.
 * **Advanced V-Curve Engine:** Least squares parabola calculation ($y = ax^2 + bx + c$) for high-precision focus vertex detection ($X_v = -b/2a$).
 * **Dual Calculation Mode:**

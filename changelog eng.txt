@@ -1,0 +1,53 @@
+# 📜 Version History (Changelog)
+
+All important changes and updates to the **Lunar/Solar/Planetary Autofocus V2** plugin for FireCapture are documented here.
+
+---
+
+## [2.9] - 2026-10-03
+### 🚀 New Features & Enhancements
+* **Dynamic & Symmetric Autofocus Routine:** Automated calculation of the scan radius based on the user's step size, featuring precise backlash management (reversing by radius + safety margin, then advancing by margin) to guarantee absolute symmetry and a perfectly centered V-Curve.
+* **Real-time Scan Progress Counter:** Added a live step counter (`Step X/20`) directly in the status display, fully localized across all 12 supported languages.
+* **GitHub Update Checker:** Integrated automated online version checking with secure TLS protocol handling to notify users and simplify downloads for future updates directly from the GUI.
+
+## [2.8] - 2026-10-01
+### 🎯 Seeing Optimization & Smart Sub-ROI
+* **"Difficult Seeing" Mode:** Introduced the new advanced option featuring *Smart Stacking & Robust Fit* to stabilize and improve sharpness analysis even under poor seeing conditions.
+* **Active (Anchored) Sub-ROI:** Implemented support for the anchored software calculation sub-area, allowing precise millimeter-level isolation of planetary or lunar targets.
+* **Stability & Interface:** Further optimizations for the V2.8 build and real-time calculation workflows.
+
+## [2.7] - 2026-09-29
+### ✨ New Features & Interface
+* **Moon/Sun Mode:** Renamed and expanded the classic "Moon" option to **"Moon/Sun"** to officially reflect full compatibility and optimization for solar imaging (H-alpha and white light), complete with localization across all 12 supported languages.
+* **Dynamic UI Update:** Real-time synchronization of the calculation mode dropdown menu when switching languages on-the-fly directly from the GUI.
+
+## [2.6] - 2026-09-29
+### 🚀 Advanced Optimization & Lucky Autofocus
+* **Lucky Autofocus Anti-Seeing Algorithm:** Revolutionized step sampling by introducing multi-frame capture during the stabilization pause. The plugin analyzes the stream and automatically selects the maximum score (the frame where seeing momentarily stabilized).
+* **Dedicated Settle Time Selector:** Added a dropdown menu for custom configuration of focuser stabilization time and Lucky AF sampling window (with selectable intervals from 500ms to 3000ms).
+
+## [2.5] - 2026-09-29
+### 🛠️ Architecture & Stability
+* **Version Update & Structure:** Consolidation of the V2.5 build with background calculation thread optimization and seamless integration of multilingual graphical components (12 languages).
+
+## [2.3] - 2026-09-29
+### 🚀 New Features
+* **Automatic CSV Export:** Added automatic saving of all V-Curve points and data to a `.csv` file inside the system's `home` directory (`user.home`) upon completion of the autofocus routine.
+* **Dummy Cam Compatibility:** The log export system is fully operational even during bench simulations with the virtual camera (*dummy cam*).
+
+## [2.2] - 2026-07-xx
+### ⚡ Optimizations & Performance
+* **Settle Time / Throttling Management:** Introduced temporal control over frame sampling (e.g., adjustable intervals at 500ms or 1s). Reduces calculation load while keeping FireCapture's video stream 100% fluid.
+
+## [2.1] - 2026-05-xx
+### 🛠️ Improvements & Stability
+* **ASCOM Driver Reset:** Optimized focuser management and initialization procedure to prevent hardware communication lockups.
+* **Interface and Localization:** Perfected dynamic Sub-ROI selection and stabilized multilingual support (12 languages).
+
+## [2.0] - 2026-03-xx (First Stable Release)
+### ✨ Initial Release
+* **V-Curve Engine:** Implementation of least squares parabola calculation ($y = ax^2 + bx + c$) for high-precision focus vertex detection ($X_v = -b/2a$).
+* **Dual Calculation Mode:**
+  * *Moon Mode:* Absolute spatial gradient analysis ($dx, dy$) pixel by pixel.
+  * *Planet Mode:* Hybrid weighted analysis with normalized average intensity to isolate planetary details while reducing seeing impact.
+* **Native Integration:** Direct communication with FireCapture's focuser instance via `SystemSettings.getCurrent().getFocuser()`.

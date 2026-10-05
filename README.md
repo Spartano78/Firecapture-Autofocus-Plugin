@@ -5,7 +5,11 @@
 Professional autofocus plugin for **FireCapture**, developed by **Stefano Romani**, designed specifically for high-resolution planetary, lunar, and solar imaging with motorized focusers (e.g., Celestron via ASCOM/CPWI).
 
 ---
-
+> ⚠️ **IMPORTANT NOTICE (Known Bug):**
+> If the plugin remains active in the menu when starting a video or image capture, FireCapture's interface shows the recording timer running, but no actual frames are saved to disk. 
+> * **Workaround:** Explicitly disable the plugin from the menu before starting any capture.
+> * **Status:** A fix is currently being developed and will be released in an upcoming update.
+---
 ## ✨ Key Features (V2.9)
 
 * **Dual Dropdown Step Configuration & Backlash Management:** Intuitive dropdown menus for **Step Size** (5, 10, 15, 20) and **Steps Count** (10, 15, 20) to control the scanning range. Paired with precise mechanical backlash recovery (reversing by scan radius + a reduced safety margin of 50 steps, then advancing by margin) for a perfectly symmetrical V-Curve while preventing tracking loss.

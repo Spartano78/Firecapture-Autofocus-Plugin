@@ -4,6 +4,7 @@
 
 Professional autofocus plugin for FireCapture, developed by Stefano Romani, designed specifically for high-resolution planetary, lunar, and solar imaging with motorized focusers across all platforms (Windows/ASCOM and Linux/INDI).
 
+[![YouTube](https://img.youtube.com/vi/DVSCTCL4s40&t=151s/hqdefault.jpg)](https://www.youtube.com/watch?v=DVSCTCL4s40&t=151s)
 
 ## 📜 Version History (v2.9.9 to v2.9.2) 
 

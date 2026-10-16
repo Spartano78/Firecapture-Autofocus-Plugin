@@ -1,6 +1,8 @@
 # 🔭 Lunar / Solar / Planetary Autofocus Plugin for FireCapture (V2.9.9)
 ---
-[![GitHub All Downloads](https://img.shields.io/github/downloads/Spartano78/Firecapture-Autofocus-Plugin/total.svg)](https://github.com/Spartano78/Firecapture-Autofocus-Plugin/releases)
+
+[![GitHub All Releases](https://img.shields.io/github/downloads/Spartano78/Firecapture-Autofocus-Plugin/total)](https://github.com/Spartano78/Firecapture-Autofocus-Plugin/releases)
+
 
 Professional autofocus plugin for FireCapture, developed by Stefano Romani, designed specifically for high-resolution planetary, lunar, and solar imaging with motorized focusers across all platforms (Windows/ASCOM and Linux/INDI).
 

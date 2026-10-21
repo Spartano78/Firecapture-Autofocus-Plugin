@@ -10,7 +10,7 @@ Professional autofocus plugin for FireCapture, developed by Stefano Romani, desi
 
 ## 📜 Version History (v2.9.9 to v2.9.2) 
 
-### See full changelog in download sections for the detailed improvements in each version and *please* read the Omnibus Multilanguage Manual (12 languages, less than 5 minutes reading) before starting using the plugin and the Best Practice and FAQ, both in the download section!
+### See full changelog in download sections for the detailed improvements in each version and *please* read the Omnibus Multilanguage Manual (12 languages, less than 5 minutes reading) and the Best Practice and FAQ before starting using the plugin , both in the download section!
 
 ### [2.9.9] - 2026-10-15
 

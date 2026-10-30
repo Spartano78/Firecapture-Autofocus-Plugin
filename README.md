@@ -1,16 +1,95 @@
-# 🔭 Lunar / Solar / Planetary Autofocus Plugin for FireCapture (V2.9.9)
+# 🔭 Lunar / Solar / Planetary Autofocus Plugin for FireCapture (V3.1.0)
 ---
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/Spartano78/Firecapture-Autofocus-Plugin/total)](https://github.com/Spartano78/Firecapture-Autofocus-Plugin/releases)
 
+Professional, free, and open-source autofocus plugin for **FireCapture**, developed by **Stefano Romani**. Designed specifically for high-resolution planetary, lunar, and solar imaging with motorized focusers across all platforms (**Windows / ASCOM** and **Linux / INDI**).
 
-Professional autofocus plugin for FireCapture, developed by Stefano Romani, designed specifically for high-resolution planetary, lunar, and solar imaging with motorized focusers across all platforms (Windows/ASCOM and Linux/INDI).
+Special acknowledgments to **Torsten Edelmann** for creating FireCapture, the world-standard planetary acquisition software.
 
-[![YouTube](https://img.youtube.com/vi/DVSCTCL4s40&t=151s/hqdefault.jpg)](https://www.youtube.com/watch?v=DVSCTCL4s40&t=151s)
-
-## 📜 Version History (v2.9.9 to v2.9.2) 
+[![YouTube](https://img.youtube.com/vi/q_pvsVSvFjc/hqdefault.jpg)](https://www.youtube.com/watch?v=q_pvsVSvFjc)
 
 ### See full changelog in download sections for the detailed improvements in each version and *please* read the Omnibus Multilanguage Manual (12 languages, less than 5 minutes reading) and the Best Practice and FAQ before starting using the plugin , both in the download section!
+
+## ✨ Key Features & Technical Highlights
+
+### 🧪 Filter Matrix & Optical Chain Presets (`v3.1.0`)
+
+- **7-Filter Planetary Matrix:** Integrated side drawer panel supporting 7 luminance and narrowband planetary filters (`UV/IR Cut`, `IR Pass`, `Red (R)`, `Green (G)`, `Blue (B)`, `Custom 1`, `Custom 2`).
+
+- **3 Optical Chain Presets:** Store independent filter offsets across 3 optical configurations (`Preset 1: Native Focal`, `Preset 2: Barlow 2x`, `Preset 3: Barlow 3x / ADC`) with customizable preset names.
+
+- **📍 Zero-Math Auto Focus Capture (`📍 Capture Focus`):** One-click button reads current focuser encoder position or step count, automatically calculates the exact step offset relative to the Master filter (`Master = 0`), writes it into the active filter field, and persists preferences.
+
+- **`Set Master (0)` Origin Baseline:** Designates the active filter (e.g. Master L) as the zero-offset baseline for the entire optical preset.
+
+- **🔄 Reset Preset Safety Protection:** Dedicated reset button protected by a confirmation dialog to safely clear filter offsets back to `0`.
+
+- **Optical Glass Thickness Constancy:** Capitalizes on invariant filter glass thickness—autofocus once on Master L during setup, then switch R, G, B filters with single clicks in all subsequent sessions!
+
+---
+
+### 🎯 Intelligent Computer Vision & Target Modes
+
+- **🎯 Sub-ROI Target Lock & Dynamic Feature Tracking (`SubRoiTracker`):** Real-time computer vision feature tracking utilizing a ZSAD (*Zero-Mean Sum of Absolute Differences*) algorithm dedicated to Moon and Sun modes. Automatically locks onto lunar craters or sunspots at Frame 0 and dynamically tracks surface features continuously throughout the V-Curve sweep, eliminating primary mirror shift displacement and remaining immune to contrast/defocus blur.
+
+- **👻 Interactive Ghost Mode (`👻 Ghost`):** Toggle button to switch the plugin popup window to 65% opacity with a smooth undecorated window frame transition, allowing imagers to view live video feeds directly underneath without closing or moving the window.
+
+- **🔄 Automated Initial Position Recovery (Auto-Restore $x_0$):** Automatically latches the initial hardware focuser position ($x_0$) upon starting an autofocus sweep. If the scan fails due to poor seeing or clouds ($R^2 < 0.65$) or is manually aborted by the user, the motor automatically returns to $x_0$ with full anti-backlash compensation.
+
+- **💾 Session Preferences Persistence Engine:** Automatically saves all active configuration parameters (selected target mode, UI language, step sizes, custom backlash values, Expert mode state, filter offsets, and chart panel visibility) to local storage (`user.home/autofocus_plugin.properties`).
+
+- **🖥️ Advanced Multi-Monitor Extended Desktop Support:** Re-engineered overlay frame initialization and computer-vision screen capture (`Robot.createScreenCapture`) to dynamically bind to the active monitor's `GraphicsConfiguration` across multi-display setups.
+
+- **🛠️ Linux / INDI Focuser Reflection Adapter Layer:** Dedicated reflection bridge for `de.wonderplanets.firecapture.indi.focuser.Focuser` on Linux/Ubuntu. Automatically translates relative step commands via `moveBy(steps)` for absolute INDI focusers (ZWO EAF, MoonLite, Esatto), resolving absolute position over-travel issues.
+
+- **📊 Absolute Hardware Position Logging in CSV:** Diagnostic CSV export (`Autofocus_Log_YYYYMMDD_HHMMSS.csv`) records real hardware encoder coordinates (`AbsolutePosition`) alongside relative offsets and sharpness scores (`StepOffset,AbsolutePosition,SharpnessScore`).
+
+- **🌐 12-Language Native Localization & CJK Font Engine:** Full real-time UI synchronization for Italian, English, Spanish, French, German, Portuguese, Polish, Dutch, Simplified Chinese, Traditional Chinese, Japanese, and Korean. Native CJK font wrapping (`Malgun Gothic`, `Microsoft YaHei`, `PingFang SC`, `MS Gothic`) eliminates mojibake on Asian operating systems.
+
+- **🚀 Zero-Latency Capture Pass-Through:** Preserves 100% CPU and USB bandwidth for maximum frame rates during active video recording (`isCapturing == true`).
+
+---
+
+## 📜 Release History Highlights
+
+### [3.1.0] - 2026-10-29
+
+- **🎯 Sub-ROI Target Lock & Dynamic Feature Tracking (`SubRoiTracker`):** Integrated real-time computer vision tracking utilizing a ZSAD (*Zero-Mean Sum of Absolute Differences*) algorithm dedicated to Moon and Sun modes. Automatically locks onto lunar craters or sunspots at Frame 0 and tracks surface features continuously throughout the V-Curve sweep, eliminating primary mirror shift displacement and remaining immune to contrast/defocus blur.
+
+- **🧪 Filter Matrix & Optical Chain Presets Panel (`FilterPanel` & `FilterManager`):** Integrated a collapsible side drawer panel supporting 7 planetary/luminance filters (`UV/IR Cut`, `IR Pass`, `Red (R)`, `Green (G)`, `Blue (B)`, `Custom 1`, `Custom 2`) and 3 customizable Optical Chain Presets (e.g., *Preset 1: Native Focal*, *Preset 2: Barlow 2x*, *Preset 3: Barlow 3x / ADC*) with editable titles.
+
+- **One-Click Automatic Filter Positioning:** Clicking any filter button calculates the relative step offset (`deltaSteps`) from the current filter and automatically drives the focuser to the exact focus point recorded for that filter.
+
+- **📍 Capture Focus (`Acquisisci Fuoco`) Zero-Math Auto-Calculation:** Introduced a single-click button that reads the current focuser position (absolute encoder or relative step count), automatically computes the exact step offset from the Master filter (`Master = 0`), writes the offset into the active filter field, and auto-saves preferences—eliminating manual mental arithmetic in the dark.
+
+- **Master Reference Origin (`Set Master (0)`):** Sets any selected filter as the new zero-offset baseline (`Master = 0`) for the entire optical chain preset.
+
+- **🔄 Reset Preset Protection:** Added a dedicated reset button protected by a safety confirmation dialog to reset all filter offsets back to 0 for the active optical preset.
+
+- **🛠️ Linux / INDI Reflection Driver Patch:** Fixed relative/absolute motion handling in `INDIFocuser` via recursive reflection search (`findMethod`), routing relative step commands via `moveBy(steps)` to resolve over-travel jumps on Linux/Ubuntu.
+
+- **CJK & Korean Unicode Font Support for Swing Dialogs:** Resolved missing glyphs/mojibake on East Asian systems by wrapping confirmation and information popup dialogs in styled `JLabel` containers that explicitly inherit localized CJK system fonts (e.g., *Malgun Gothic* for Korean Hangul).
+
+- **Fully Localized Popups Across 12 Languages:** Dynamically linked all filter notification messages, tooltips, and dialog titles to the plugin's internationalization engine across all 12 supported languages.
+
+### [3.0.0] - 2026-10-22
+
+- **Linux / INDI Reflection Adapter:** Resolved absolute position motion on Linux/Ubuntu INDI focusers (ZWO EAF, MoonLite, Esatto) by converting relative movements to absolute target positions.
+
+- **Multi-Monitor Extended Desktop:** Dynamic display device binding for multi-monitor setups and secondary screens.
+
+- **Computer Vision Auto-Detect ROI:** 1-click automatic centroid detection and Sub-ROI/Saturn mask placement.
+
+- **True Crimson Red Astro Night Vision:** Deep ruby night palette (`#120202` / `#FF5050`) across GUI and charts.
+
+- **Interactive Ghost Mode:** 65% window opacity toggle for live video pass-through visibility.
+
+- **Auto-Restore ($x_0$):** Focuser automatically returns to starting position on abort or low $R^2 < 0.65$.
+
+- **Session Persistence:** Auto-saving and restoring all user parameters in `.properties` file.
+
+- **Absolute Encoder CSV Logging:** `AbsolutePosition` column added to diagnostic session lo
 
 ### [2.9.9] - 2026-10-15
 
@@ -99,7 +178,7 @@ Professional autofocus plugin for FireCapture, developed by Stefano Romani, desi
 
 ## 🌐 Multilingual User Guide
 
-For detailed instructions, troubleshooting notes, and tips in all 12 supported languages, check the **"Manual_Omnibus_12_Languages_Firecapture_Autofocus-v2.9.9.pdf"** in the releases section.
+For detailed instructions, troubleshooting notes, and tips in all 12 supported languages, check the **"Manual_Omnibus_12_Languages_Firecapture_Autofocus-v3.1.0.pdf"** in the releases section.
 
 
 ## ☕ Support the Developer

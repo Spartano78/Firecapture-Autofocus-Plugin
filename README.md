@@ -7,6 +7,10 @@ Professional, free, and open-source autofocus plugin for **FireCapture**, develo
 
 Special acknowledgments to **Torsten Edelmann** for creating FireCapture, the world-standard planetary acquisition software.
 
+[![YouTube](https://img.youtube.com/vi/muZQQPXAkpU/hqdefault.jpg)](https://www.youtube.com/watch?v=muZQQPXAkpU)
+
+[![YouTube](https://img.youtube.com/vi/tgwyQnAry-k/hqdefault.jpg)](https://www.youtube.com/watch?v=tgwyQnAry-k)
+
 [![YouTube](https://img.youtube.com/vi/q_pvsVSvFjc/hqdefault.jpg)](https://www.youtube.com/watch?v=q_pvsVSvFjc)
 
 ### See full changelog in download sections for the detailed improvements in each version and *please* read the Omnibus Multilanguage Manual (12 languages, less than 5 minutes reading) and the Best Practice and FAQ before starting using the plugin , both in the download section!

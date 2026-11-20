@@ -13,6 +13,8 @@ Special acknowledgments to **Torsten Edelmann** for creating FireCapture, the wo
 
 [![YouTube](https://img.youtube.com/vi/q_pvsVSvFjc/hqdefault.jpg)](https://www.youtube.com/watch?v=q_pvsVSvFjc)
 
+[![YouTube](https://img.youtube.com/vi/4Y7YgGDpuMA/hqdefault.jpg)](https://www.youtube.com/watch?v=4Y7YgGDpuMA)
+
 ### See full changelog in download sections for the detailed improvements in each version and *please* read the Omnibus Multilanguage Manual (12 languages, less than 5 minutes reading) and the Best Practice and FAQ before starting using the plugin , both in the download section!
 
 ## ✨ Key Features & Technical Highlights
